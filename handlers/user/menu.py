@@ -38,7 +38,13 @@ async def user_menu(message: Message):
     markup.insert(cart)
     markup.add(sale).insert(contacts)
     await message.answer_photo(sale_photo, reply_markup=markup)
-    await message.answer('🔥Акційна пропозиція🔥 ')
+    await message.answer('🔥Акційна пропозиція🔥 '
+                         '\n*Висота букета:*'
+                         '\n`50-60 см`'
+                         '\n*Основна квітка:*'
+                         '\n`Троянда`'
+                         '\n*Колір:*'
+                         '\n`Червоний`', parse_mode='MarkdownV2')
 
 @dp.message_handler(IsUser(), text=contacts)
 async def user_menu(message: Message):
